@@ -1,0 +1,113 @@
+<html>
+  
+  <head>
+    <title>Willkommen auf JavaScript Tests virtuellem Host</title>
+
+   
+
+    <script type="text/javascript" src="js/cookie.js"></script>
+    <script type="text/javascript">
+      
+      function validateForm(value) {
+        if(document.getElementById('vorname').value == '' ) {
+          alert('Das Feld Vorname muss ausgefuellt werden!');
+        }
+        else {
+          var vorName = document.getElementById('vorname').value;
+        }
+        if(document.getElementById('nachname').value == '') {
+          alert('Das Feld Nachname muss ausgefuellt werden!');
+        }
+        else {
+          var nachName = document.getElementById('nachname').value;
+        }
+        if(isNaN(document.getElementById('jahre').value)) {
+          alert('Die Zugehoerigkeit muss in Zahlen angegeben werden');
+        }
+        if(vorName && nachName) {
+          var gesamtname = "Hallo " + vorName + " " + nachName;
+          writeCookie("testname", gesamtname, 365); 
+          //alert(gesamtname);
+        }
+      }
+
+      function changeImage() {
+        //setInterval('location.reload();', 4000);
+        setTimeout('document.getElementById("spannung").src="images/stress.jpg";', 2000);
+      }
+    </script>
+    <noscript><div style="width:300px; height:600px; background-color:red">Hey Alter, du musst dein JavaScript im Browser aktivieren, sonst funktioniert die Seite nicht richtig</div></noscript>
+  </head>
+
+
+  <body>
+
+    <h1>Jetzt spielen wir mal mit HTML5 Canvas</h1>
+    <div style="border: 1px solid gray; width:580px; margin:0 25% 0 25%;">
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    </div>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      context.beginPath();
+      context.moveTo(100, 20);
+      context.bezierCurveTo(50, 100, 250, 100, 200, 20);
+      context.lineWidth = 5;
+
+      // line color
+      context.strokeStyle = 'red';
+      context.stroke();
+    </script>
+
+
+   
+    
+    
+
+<!--
+
+    <h1>JavaScript Testseite</h1>
+
+    <p><img src="images/spannung.jpg" id="spannung" onload="changeImage()"></p>
+    <h2>Ein kleines Formular</h2>
+      <form action="http://de.selfhtml.org/cgi-bin/comments.pl" methode="post" name="testform">
+        
+          <legend>Pers&ouml;nliche Daten</legend>
+            <p> <label for="vorname">Vorname:</label><br>
+              <input typ="text" size="30" name="vorname" id="vorname"
+                     onblur="validateForm()"></p>
+            <p> <label for="nachname">Nachname</label><br>
+              <input typ="text" size="30" name="nachname" id="nachname"
+                  onblur="validateForm()"></p>
+            <p> <label for="jahre"> Jahre deiner Zugeh&ouml;rigkeit</label><br>
+              <input typ="text" size="10" name="jahre" id="jahre" onblur="validateForm()"></p>
+        
+          <input type="submit" value="schick mal her">
+      </form>
+
+<p><a href="http://www.example.com" target="_self">Klick mich mal</a></p>
+
+<h3>Jetzt spielen wir mal mit HTML5 Canvas</h3>
+
+
+    <canvas id="myCanvas" width="578" height="200"></canvas>
+    <script>
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+
+      context.beginPath();
+      context.moveTo(160, 160);
+      context.bezierCurveTo(110, 10, 388, 10, 38, 170);
+      context.lineWidth = 10;
+
+      // line color
+      context.strokeStyle = 'black';
+      context.stroke();
+    </script>
+  -->
+
+</body>
+</html>
+
+
